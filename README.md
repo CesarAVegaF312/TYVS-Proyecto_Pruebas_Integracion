@@ -172,12 +172,14 @@ mvn clean verify
 | **Reflexión técnica y conclusiones** | Análisis y aprendizajes. | Reflexión profunda con ejemplos. | Reflexión general con evidencias parciales. | Superficial. | Mínima o sin conexión. | No presenta. |
 | **Calidad general del proyecto** | Código, estructura y presentación. | Correcta integración entre código y documentación. | Buen nivel general con leves inconsistencias. | Parcialmente funcional. | Fallos críticos o sin coherencia. | No ejecuta o incompleto. |
 
+> **Cómo suma**: 8 criterios × 5 pts = **40 puntos**.
+
 | **Rango de puntaje** | **Desempeño** |
 |----------------------|----------------|
-| 45 – 50 | Excelente manejo de pruebas de integración y sistema. |
-| 35 – 44 | Buen trabajo, ejecución completa pero con fallas menores. |
-| 30 – 34 | Cumple con lo básico, faltan evidencias o profundidad. |
-| < 30 | No cumple con los criterios mínimos del taller/proyecto. |
+| 36 – 40 | Excelente manejo de pruebas de integración y sistema. |
+| 28 – 35 | Buen trabajo, ejecución completa pero con fallas menores. |
+| 24 – 27 | Cumple con lo básico, faltan evidencias o profundidad. |
+| < 24 | No cumple con los criterios mínimos del proyecto. |
 
 ---
 
