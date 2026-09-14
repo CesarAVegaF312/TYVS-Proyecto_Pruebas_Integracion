@@ -5,7 +5,7 @@ El propósito es aplicar las técnicas vistas en el **Taller de Pruebas de Integ
 
 ---
 
-## 🎯 Objetivos
+## Objetivos
 
 - Aplicar principios de **pruebas de integración** sobre arquitecturas multicapa y/o microservicios.
 - Diseñar y ejecutar **pruebas de sistema** a través de la capa REST o interfaz principal del software.
@@ -41,7 +41,7 @@ mvn jacoco:report
 
 ---
 
-> 💡 Nota sobre el lenguaje de implementación
+> Nota sobre el lenguaje de implementación
 >
 > El lenguaje de referencia en este taller es **Java**, dado su fuerte integración con el ecosistema de **JUnit 4/5**, **Spring Boot Test**, **Mockito** y **H2 Database**.
 > No obstante, los principios y prácticas descritos son **transferibles a otros lenguajes**, siempre que el entorno soporte:
@@ -74,7 +74,7 @@ mvn jacoco:report
 > - El taller prioriza **Java con Maven y Spring Boot**, pero promueve la **adaptación tecnológica**.
 > - Todo el proceso se documente en el **Wiki del repositorio**, siguiendo la estructura del taller.
 >
-> ⚠️ El cambio de lenguaje **no exime** la aplicación de los conceptos ni la presentación de evidencias del proceso TDD.
+> El cambio de lenguaje **no exime** la aplicación de los conceptos ni la presentación de evidencias del proceso TDD.
 > La evaluación se basará en la **metodología aplicada**, no en el lenguaje, sin embargo debe ser claro en la documentación sobre como se deben ejecutar las pruebas.
 
 ---
