@@ -3,6 +3,15 @@
 Este proyecto corresponde al trabajo práctico sobre las **pruebas de integración y de sistema**, como parte final del curso **Testing y Validación de Software**.
 El propósito es aplicar las técnicas vistas en el **Taller de Pruebas de Integración** para construir, ejecutar y documentar pruebas automatizadas que validen la interacción entre componentes y la estabilidad del sistema bajo escenarios reales.
 
+## El caso del proyecto
+
+Se trabaja sobre el **mismo repositorio y el mismo caso** del [Proyecto de Pruebas Unitarias](https://github.com/CesarAVegaF312/TYVS-Proyecto_Pruebas_Unitarias) (ver el [catálogo de casos](https://github.com/CesarAVegaF312/TYVS-Proyecto_Pruebas_Unitarias/blob/master/casos/README.md)). El dominio ya existe; en esta entrega se le agregan, según la ficha del caso:
+
+- **Persistencia** con la restricción de unicidad de la ficha.
+- **API REST** con los endpoints de la ficha y el [contrato común de códigos HTTP](https://github.com/CesarAVegaF312/TYVS-Proyecto_Pruebas_Unitarias/blob/master/casos/README.md#contrato-común-a-todos-los-casos).
+- **Adaptador del servicio externo**, que en las pruebas se reemplaza por un doble (Mockito o un servidor simulado) y cuyo fallo debe producir `EXTERNAL_UNAVAILABLE`.
+- **Pipeline de CI** que ejecute la suite en cada *pull request*.
+
 ---
 
 ## Objetivos
@@ -11,6 +20,7 @@ El propósito es aplicar las técnicas vistas en el **Taller de Pruebas de Integ
 - Diseñar y ejecutar **pruebas de sistema** a través de la capa REST o interfaz principal del software.
 - Usar herramientas como **JUnit 5, Spring Boot Test, Mockito y H2** para validar la comunicación entre componentes.
 - Asegurar la cobertura de integración mediante **JaCoCo** u otra herramienta equivalente.
+- Ejecutar la suite completa en un **pipeline de integración continua** (GitHub Actions) como condición para integrar cambios.
 - Documentar el proceso completo en el **Wiki del repositorio**, siguiendo la metodología vista en el taller.
 
 ---
@@ -92,6 +102,8 @@ mvn jacoco:report
 mvn clean verify
 ```
 
+- **Workflow de GitHub Actions** en `.github/workflows/` que ejecute `mvn clean verify` en cada *pull request*, con el resultado visible en el PR. (El [Taller de Pruebas de Seguridad](https://github.com/CesarAVegaF312/TYVS-Taller_Pruebas_de_Seguridad) muestra cómo agregarle una puerta de análisis estático; es recomendable, no obligatorio.)
+
 - URL pública del repositorio (GitHub o GitLab).
 
 ---
@@ -104,7 +116,7 @@ mvn clean verify
 #### Estructura sugerida del Wiki
 
 1. **Inicio**
-   - Descripción del dominio y propósito del sistema.
+   - Caso asignado (enlace a su ficha) y supuestos resueltos que afectan esta entrega.
    - Diagrama de arquitectura (capas o componentes integrados).
    - Integrantes del equipo.
 
@@ -145,6 +157,7 @@ mvn clean verify
 | **Número mínimo de pruebas de integración** | 3 |
 | **Número mínimo de pruebas de sistema (MockMvc)** | 2 |
 | **Errores no manejados (HTTP 500)** | 0 |
+| **Pipeline de CI** | `mvn clean verify` en cada *pull request* |
 | **Buenas prácticas** | Código limpio, control de excepciones, mocks correctamente configurados. |
 
 ---
@@ -164,7 +177,7 @@ mvn clean verify
 | **Criterios de evaluación** | **Indicadores de cumplimiento** | **Excelente (5 pts)** | **Bueno (4 pts)** | **Necesita mejorar (3.5 pts)** | **Deficiente (2.5 pts)** | **No cumple (0 pts)** |
 |------------------------------|---------------------------------|------------------------|--------------------|---------------------------------|---------------------------|------------------------|
 | **Diseño de pruebas de integración** | Escenarios relevantes entre capas. | Casos completos, coherentes y reproducibles. | Casos bien definidos pero con fallos menores. | Escenarios incompletos. | Pruebas confusas o fallidas. | No hay pruebas de integración. |
-| **Configuración del entorno (H2, Mockito)** | Configuración correcta y aislada. | Entorno estable, con base en memoria o mocks funcionales. | Configurado parcialmente. | Entorno inestable o acoplado. | No se puede ejecutar. | No configura entorno. |
+| **Configuración del entorno (H2, Mockito, CI)** | Configuración correcta, aislada y ejecutada en CI. | Entorno estable, con base en memoria o mocks funcionales, y la suite corriendo en el pipeline en cada *pull request*. | Configurado parcialmente. | Entorno inestable o acoplado. | No se puede ejecutar. | No configura entorno. |
 | **Pruebas de sistema (MockMvc o similar)** | Cobertura de endpoints y validación de respuestas. | Casos claros con validación de estados HTTP y contenido. | Cobertura parcial o con respuestas ambiguas. | Escenarios incompletos. | Sin pruebas de sistema. | No aplica. |
 | **Gestión de defectos** | Registro y seguimiento. | Archivo actualizado con análisis y estado de cada defecto. | Registro incompleto o sin estados. | Defectos listados sin análisis. | Registro mínimo o no actualizado. | No hay registro. |
 | **Cobertura de código (JaCoCo)** | Porcentaje total y de integración. | ≥ 80% global y ≥ 70% en integración. | Entre 70% y 79%. | Entre 60% y 69%. | Menor a 60%. | No presenta. |
