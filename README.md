@@ -154,7 +154,7 @@ mvn clean verify
 |----------|------------------|
 | **Cobertura global (JaCoCo o equivalente)** | ≥ 80% |
 | **Cobertura de pruebas de integración** | ≥ 70% |
-| **Número mínimo de pruebas de integración** | 3 |
+| **Número mínimo de pruebas de integración** | 4 (el mismo mínimo del taller) |
 | **Número mínimo de pruebas de sistema (MockMvc)** | 2 |
 | **Errores no manejados (HTTP 500)** | 0 |
 | **Pipeline de CI** | `mvn clean verify` en cada *pull request* |
